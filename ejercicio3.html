@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial de un Número</title>
+</head>
+<body>
+    <h1>Calcular Factorial</h1>
+    <p id="factorialResult"></p>
+
+    <script>
+        // Función para calcular el factorial de un número
+        function factorial(n) {
+            if (n < 0) return 'El factorial no está definido para números negativos.';
+            if (n === 0 || n === 1) return 1; // 0! y 1! son ambos 1
+
+            let result = 2;
+            for (let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+
+        // Número para calcular su factorial
+        const number = 5; // Puedes cambiar este valor por cualquier número entero positivo
+
+        // Mostrar el resultado en el párrafo
+        const resultPara = document.getElementById('factorialResult');
+        resultPara.textContent = `El factorial de ${number} es ${factorial(number)}.`;
+    </script>
+</body>
+</html>

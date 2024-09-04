@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Crédito Bancario</title>
+    <script>
+        function verificarCredito() {
+            // Obtener los valores ingresados por el usuario
+            var edad = parseInt(document.getElementById("edad").value, 10);
+            var salario = parseFloat(document.getElementById("salario").value);
+
+            // Verificar si los valores son números válidos
+            if (isNaN(edad) || isNaN(salario)) {
+                document.getElementById("resultado").textContent = "Por favor, ingresa valores válidos para la edad y el salario.";
+                return;
+            }
+
+            // Evaluar los requisitos para el crédito bancario
+            if (edad > 25 && salario > 3000) {
+                document.getElementById("resultado").textContent = "Puedes aplicar a un crédito bancario.";
+            } else {
+                document.getElementById("resultado").textContent = "No cumples con los requisitos para aplicar a un crédito bancario.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Evaluación para Crédito Bancario</h1>
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" min="0">
+    <br>
+    <label for="salario">Salario Mensual:</label>
+    <input type="number" id="salario" step="any" min="0">
+    <br>
+    <button onclick="verificarCredito()">Verificar Requisitos</button>
+    <p id="resultado"></p>
+</body>
+</html>
